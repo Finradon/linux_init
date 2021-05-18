@@ -11,6 +11,7 @@ EOF
 cat << EOF >> $HOME/.bash_aliases
 alias pi='ssh pi@raspberrypi'
 alias ytmp3='youtube-dl -x --audio-format mp3 --audio-quality 0 -o "$HOME/Music/youtube-dl/%(title)s.%(ext)s"'
+alias pip='pip3'
 alias clipkey='cat $HOME/.ssh/id_rsa.pub'
 EOF
 . $HOME/.bashrc
