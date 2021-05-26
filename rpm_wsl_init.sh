@@ -16,6 +16,12 @@ alias pi='ssh pi@raspberrypi'
 alias ytmp3='youtube-dl -x --audio-format mp3 --audio-quality 0 -o "/mnt/d/Music/youtube-dl/%(title)s.%(ext)s"'
 alias pip='pip3'
 alias clipkey='cat $HOME/.ssh/id_rsa.pub'
+alias thesis='cd /mnt/c/Users/Benedict\ Harder/Documents/repos/bachelorthesis'
+alias wome='cd /mnt/c/Users/Benedict\ Harder'
+alias repos='cd /mnt/c/Users/Benedict\ Harder/Documents/repos'
+alias ddev='cd /mnt/d/dev/repos'
+alias graphdiff='cd /mnt/d/dev/repos/consistencyManager/SrcPython/GraphBasedModelDiff/GraphBasedModelDiff'
+alias ll='ls -la'
 EOF
 . $HOME/.bashrc
 #directories
@@ -26,7 +32,13 @@ mkdir $HOME/.ssh
 #systemctl enable sshd
 #systemctl start sshd
 ssh-keygen -t rsa -b 2048 -C "rpm" -f $HOME/.ssh/id_rsa -q -N ""
+#nano
+dnf install -y nano
 #python & pip
-dnf -y install python
+dnf install -y python
 python -m pip install --upgrade pip
 pip install youtube-dl
+#git
+git config --global user.name "finradon"
+git config --global user.email benedictharder@posteo.de
+git config --global core.editor nano

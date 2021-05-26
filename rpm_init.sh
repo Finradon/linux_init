@@ -15,6 +15,7 @@ cat << EOF >> $HOME/.bash_aliases
 alias pi='ssh pi@raspberrypi'
 alias ytmp3='youtube-dl -x --audio-format mp3 --audio-quality 0 -o "$HOME/Music/youtube-dl/%(title)s.%(ext)s"'
 alias clipkey='cat $HOME/.ssh/id_rsa.pub'
+alias ll='ls -la'
 EOF
 . $HOME/.bashrc
 #directories
@@ -26,11 +27,17 @@ mkdir $HOME/repos
 #systemctl enable sshd
 #systemctl start sshd
 ssh-keygen -t rsa -b 2048 -C "rpm" -f $HOME/.ssh/id_rsa -q -N ""
+#nano
+dnf install -y nano
 #python & pip
-dnf install python
+dnf install -y python
 python -m pip install --upgrade pip
 pip install youtube-dl
 #flatpak
 dnf install flatpak
 flatpak install flathub chat.rocket.RocketChat
 flatpak install flathub org.signal.Signal
+#git
+git config --global user.name "finradon"
+git config --global user.email benedictharder@posteo.de
+git config --global core.editor nano
