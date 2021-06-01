@@ -28,13 +28,13 @@ mkdir $HOME/repos
 #systemctl start sshd
 ssh-keygen -t rsa -b 2048 -C "rpm" -f $HOME/.ssh/id_rsa -q -N ""
 #nano
-dnf install -y nano
+dnf -y install nano
 #python & pip
-dnf install -y python
+dnf -y install python
 python -m pip install --upgrade pip
 pip install youtube-dl
 #flatpak
-dnf install flatpak
+dnf -y install flatpak
 flatpak install flathub chat.rocket.RocketChat
 flatpak install flathub org.signal.Signal
 #git
